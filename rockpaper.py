@@ -43,8 +43,14 @@ def play_game():
         print("Your score:", user_score)
         print("Computer's score:", computer_score)
 
-        play_again = input("Do you want to play again? (yes/no): ").lower()
-        if play_again != 'y':
+        while True:
+            play_again = input("Do you want to play again? (yes/no): ").lower()
+            if play_again in ['yes', 'no']:
+                break
+            else:
+                print("Invalid input. Please enter 'yes' or 'no'.")
+
+        if play_again != 'yes':
             break
 
 if __name__ == "__main__":
